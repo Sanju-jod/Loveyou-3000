@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #ff4d6d);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.message-box {
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.volume-control {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #ffffffcc;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-size: 14px;
+}
+audio {
+  display: none;
+}
+</style>
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const music = document.getElementById("bgMusic");
+  const slider = document.getElementById("volumeSlider");
+
+  // Set starting volume
+  music.volume = slider.value / 100;
+
+  // Try autoplay
+  music.play().catch(() => {
+    console.log("Autoplay blocked until interaction");
+  });
+
+  // Volume slider
+  slider.addEventListener("input", function () {
+    music.volume = this.value / 100;
+  });
+
+});
+</script>
+
+
+<body>
+    <audio id="bgMusic" loop>
+  <source src="ninakk nizhalayi.mp3" type="audio/mpeg">
+</audio>
+
+<div class="volume-control">
+  <span id="volumeIcon">🔊</span>
+  <input type="range" id="volumeSlider" min="0" max="100" value="50">
+</div>
+
+<div class="message-box">
+  <h1>❤️ Happy Valentine's Day ❤️</h1>
+  </h2>My Love ❤️</h2>
+  <p>
+    I love you more than you think…  
+    More than words can explain.  
+    More than distance can measure.  
+    More than time can change.You are my peace,
+    my strength, my home.  
+    And in every lifetime, I will choose you again💖</p>
+    <p>
+        💖Only yours Sanju💖</p>
+</div>
+
+</body>
+</html>

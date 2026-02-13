@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>She Said Yes 💖</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff4d6d, #ff9a9e);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+img {
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.heart {
+  position: absolute;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: white;
+  color: #ff4d6d;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+
+<div>
+  <h1>❤️ AMMU ❤️</h1>
+  <p>You said YES!!! 😍💖</p>
+  <p>I promise to love you forever 💕</p>
+  <p>You are my favourite person in the world 🌍</p>
+  <img src="https://preview.redd.it/what-is-that-one-image-you-believe-represents-bubu-and-dudu-v0-y7ac9tldjzze1.jpeg?auto=webp&s=d58e2480c43338b2310de7171487ac8f9a49efef" 
+     alt="Our Memory"
+     style="width:250px; border-radius:20px; margin-top:20px;">
+     <br><br>
+
+<button onclick="goToSecretPage()">Go To Secret Page 🔐</button>
+</div>
+
+
+<script>
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
+function goToSecretPage() {
+  window.location.href = "secret.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For ❤️AMMU❤️ 💖</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container {
+  z-index: 2;
+}
+
+h1, h2 {
+  color: white;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: white;
+  color: #ff4d6d;
+  position: absolute;
+}
+
+#secret {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+img {
+  width: 200px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.heart {
+  position: absolute;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>❤️ AMMU ❤️</h1>
+  <h2>Will You Be My Valentine? 💕</h2>
+  
+ <button id="yes" onclick="goToLovePage()">Yes 💘</button>
+  <button id="no">No 😜</button>
+
+  <div id="secret">
+    <p>You are the best thing that ever happened to me ❤️</p>
+    <p>I promise to annoy you forever 😘</p>
+    <img src="your-photo.jpg" alt="Our Memory">
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", function() {
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+function goToLovePage() {
+  window.location.href = "love.html";
+}
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
+</script>
+
+</body>
+</html>
